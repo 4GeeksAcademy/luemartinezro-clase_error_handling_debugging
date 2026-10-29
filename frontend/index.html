@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend TDD — Todo + Validación</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body class="bg-slate-100 text-slate-800 min-h-screen">
+    <main class="max-w-3xl mx-auto p-6 space-y-8">
+      <header>
+        <h1 class="text-3xl font-bold text-slate-900">Ejercicios TDD</h1>
+        <p class="text-slate-500">
+          Frontend (vanilla JS + Tailwind) conectado al backend FastAPI.
+        </p>
+      </header>
+
+      <section class="bg-white rounded-xl shadow p-6">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-xl font-semibold">Lista de tareas</h2>
+          <span id="api-status" class="text-sm font-medium px-3 py-1 rounded-full bg-slate-200 text-slate-600">
+            Comprobando API…
+          </span>
+        </div>
+
+        <form id="todo-form" class="flex gap-2 mb-4">
+          <input
+            id="todo-input"
+            type="text"
+            placeholder="Nueva tarea…"
+            class="flex-1 border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            autocomplete="off"
+          />
+          <button
+            type="submit"
+            class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2 rounded-lg transition"
+          >
+            Añadir
+          </button>
+        </form>
+
+        <p id="todo-error" class="hidden text-sm text-red-600 mb-2"></p>
+        <ul id="todo-list" class="space-y-2"></ul>
+        <p id="todo-empty" class="text-slate-400 text-sm">No hay tareas todavía.</p>
+      </section>
+
+      <section class="bg-white rounded-xl shadow p-6">
+        <h2 class="text-xl font-semibold mb-4">Validador de formulario</h2>
+        <form id="validate-form" class="space-y-3">
+          <div>
+            <label for="v-username" class="block text-sm font-medium mb-1">Usuario</label>
+            <input
+              id="v-username"
+              type="text"
+              class="w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            />
+            <p id="v-username-err" class="hidden text-sm text-red-600 mt-1"></p>
+          </div>
+          <div>
+            <label for="v-email" class="block text-sm font-medium mb-1">Email</label>
+            <input
+              id="v-email"
+              type="email"
+              class="w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            />
+            <p id="v-email-err" class="hidden text-sm text-red-600 mt-1"></p>
+          </div>
+          <div>
+            <label for="v-password" class="block text-sm font-medium mb-1">Contraseña</label>
+            <input
+              id="v-password"
+              type="password"
+              class="w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            />
+            <p id="v-password-err" class="hidden text-sm text-red-600 mt-1"></p>
+          </div>
+          <button
+            type="submit"
+            class="bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-4 py-2 rounded-lg transition"
+          >
+            Validar
+          </button>
+          <p id="v-result" class="hidden text-sm font-medium mt-2"></p>
+        </form>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
